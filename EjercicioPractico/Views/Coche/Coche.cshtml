@@ -1,0 +1,29 @@
+﻿@model List<EjercicioPractico.Models.Coche>
+
+@{
+    ViewBag.Title = "Coches";
+}
+
+<div class="jumbotron">
+    <center>
+        <h1>Listado de coches</h1>
+    </center>
+</div>
+
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <h2>Nombre</h2>
+            <h6>@item.Marca</h6>
+
+            <h2>Modelo</h2>
+            <h6>@item.Modelo</h6>
+
+            <h2>Color</h2>
+            <h6>@item.Color</h6>
+            <p><a class="btn btn-info" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        </div>
+    }
+</div>

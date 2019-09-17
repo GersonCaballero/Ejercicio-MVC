@@ -1,0 +1,44 @@
+﻿@model EjercicioPractico.Models.NewAlquilerViewModel
+
+@{
+    ViewBag.Title = "Lista de alquiler";
+}
+
+<div class="jumbotron">
+    <center>
+        <h1>Listado de coches Alquilados</h1>
+    </center>
+</div>
+
+<div class="row">
+    
+    @foreach (var item in Model.Users)
+    {
+        <div class="col-md-4">
+            <h1>Cliente</h1>
+
+            <h2>Nombre</h2>
+            <h6>@item.Nombre</h6>
+
+            <h2>Cedula</h2>
+            <h6>@item.Cedula</h6>
+        </div>
+    }
+
+    
+    @foreach (var item in Model.Coches)
+    {
+        <div class="col-md-4">
+            <h1>Automovil</h1>
+
+            <h2>Marca</h2>
+            <h6>@item.Marca</h6>
+
+            <h2>Modelo</h2>
+            <h6>@item.Modelo</h6>
+
+            <h2>Color</h2>
+            <h6>@item.Color</h6>
+        </div>
+    }
+</div>

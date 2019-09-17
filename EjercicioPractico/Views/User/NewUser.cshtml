@@ -1,0 +1,24 @@
+﻿@model EjercicioPractico.Models.User
+@{
+    ViewBag.Title = "New User";
+}
+
+<div class="jumbotron">
+    <center>
+        <h1>Agregar nuevo usuario</h1>
+    </center>
+</div>
+
+@using (Html.BeginForm("CreateNewUser", "User"))
+{
+    <div>
+        @Html.LabelFor(m => m.Nombre)
+        @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Cedula)
+        @Html.TextBoxFor(m => m.Cedula, new { @class = "form-control" })
+    </div>
+    <br/>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+}

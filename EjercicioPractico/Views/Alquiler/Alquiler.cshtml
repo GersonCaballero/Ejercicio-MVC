@@ -1,0 +1,24 @@
+﻿@model EjercicioPractico.Models.NewAlquilerViewModel
+@{
+    ViewBag.Title = "Alquiler";
+}
+
+<div class="jumbotron">
+    <center>
+        <h1>Agregar nuevo coche</h1>
+    </center>
+</div>
+
+@using (Html.BeginForm("CreateAlquiler", "Alquiler"))
+{
+    <div>
+        @Html.LabelFor(m => m.Alquiler.IdUser)
+        @Html.DropDownListFor(m => m.Alquiler.IdUser, new SelectList(Model.Users, "Id", "Nombre"), "Seleccionar Usuario", new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Alquiler.IdCoche)
+        @Html.DropDownListFor(m => m.Alquiler.IdCoche, new SelectList(Model.Coches, "Id", "Modelo"), "Seleccionar Modelo", new { @class = "form-control" })
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Guardar</button>
+}

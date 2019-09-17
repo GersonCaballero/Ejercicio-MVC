@@ -1,0 +1,27 @@
+﻿@model EjercicioPractico.Models.Coche
+@{
+    ViewBag.Title = "New Coche";
+}
+
+<div class="jumbotron">
+    <center>
+        <h1>Agregar nuevo coche</h1>
+    </center>
+</div>
+
+@using (Html.BeginForm("CreateNewCoche", "Coche"))
+{
+    <div>
+        @Html.LabelFor(m => m.Marca)
+        @Html.TextBoxFor(m => m.Marca, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Modelo)
+        @Html.TextBoxFor(m => m.Modelo, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Color)
+        @Html.TextBoxFor(m => m.Color, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+}
