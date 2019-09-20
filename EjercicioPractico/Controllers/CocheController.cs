@@ -17,9 +17,17 @@ namespace EjercicioPractico.Controllers
             db = new EjercicioPracticoContext();
         }
 
-        public ActionResult Coche()
+        public List<Coche> cochesList()
         {
             var coches = db.Coches.ToList();
+
+            return coches;
+        }
+
+        public ActionResult Coche()
+        {
+           List<Coche> coches = cochesList();
+
             return View(coches);
         }
 
